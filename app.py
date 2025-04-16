@@ -107,7 +107,6 @@ def delete_poll(id):
     return redirect(url_for("index"))
 
 if __name__ == "__main__":
-    init_polls_csv()  # make sure the CSV is initialized
     app.run(host="0.0.0.0", port=5000)
 
 
