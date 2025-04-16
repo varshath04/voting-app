@@ -1,0 +1,121 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.image {
+    height: 300px;
+    width:300px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: block;
+}
+
+/* Navigation Bar */
+.nav-bar {
+    background-color: #0056b3;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Container Styling */
+.container {
+    background-color:   #f0f9ff;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Heading */
+.polls-heading {
+    font-size: 1.8em;
+    color: #0056b3;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Image Styling */
+.image {
+    height: 300px;
+    width:300px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: block;
+}
+
+/* Polls Container */
+.polls-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Polls List */
+.polls-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.poll-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.poll-title {
+    text-decoration: none;
+    color: #333333;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.poll-title:hover {
+    color: #0056b3;
+}
+
+/* Delete Link */
+.delete-link {
+    color: #ff4d4d;
+    text-decoration: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.delete-link:hover {
+    color: #cc0000;
+}
+
+/* Create Button */
+.create-button {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: #0056b3;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.create-button:hover {
+    background-color: #004494;
+}

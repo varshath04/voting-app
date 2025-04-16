@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Poll</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='new_poll.css') }}">
+    <script>
+        function addOption() {
+            const container = document.getElementById('options-container');
+            const optionCount = container.children.length + 1;
+
+            const newOption = document.createElement('div');
+            newOption.className = 'option-row';
+            newOption.innerHTML = `
+                <label class="label" for="option${optionCount}">Option ${optionCount}</label>
+                <input class="input-field" type="text" name="option${optionCount}" placeholder="Enter Option ${optionCount}" required>
+                <button class="delete-option" onclick="deleteOption(this)">🗑️</button>
+            `;
+            container.appendChild(newOption);
+        }
+
+        function deleteOption(button) {
+            const optionContainer = button.closest('.option-row');
+            optionContainer.remove();
+        }
+
+        function showSuccessPopup() {
+            const popup = document.getElementById('success-popup');
+            popup.style.display = 'block';
+            setTimeout(() => { popup.style.display = 'none'; }, 2000);
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-bar">
+        VOTING APP
+    </div>
+
+    <div id="success-popup" class="popup">
+        Poll created successfully!
+    </div>
+
+    <div class="container">
+        <h3 class="page-heading">Create New Poll</h3>
+
+        <div class="form-container">
+            <form action="{{ url_for('create_poll') }}" method="post" onsubmit="showSuccessPopup()">
+                <div class="poll-row">
+                    <label class="label" for="poll">Poll Text</label>
+                    <input class="input-field" type="text" name="poll" placeholder="Enter the poll question" required>
+                </div>
+
+                <div id="options-container">
+                    <div class="option-row">
+                        <label class="label" for="option1">Option 1</label>
+                        <input class="input-field" type="text" name="option1" placeholder="Enter Option 1" required>
+                        <button class="delete-option" onclick="deleteOption(this)">🗑️</button>
+                    </div>
+                    <div class="option-row">
+                        <label class="label" for="option2">Option 2</label>
+                        <input class="input-field" type="text" name="option2" placeholder="Enter Option 2" required>
+                        <button class="delete-option" onclick="deleteOption(this)">🗑️</button>
+                    </div>
+                </div>
+
+                <button type="button" class="submit-button add-option" onclick="addOption()">+ Add Option</button><br><br>
+                <input class="submit-button" type="submit" value="Create Poll">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

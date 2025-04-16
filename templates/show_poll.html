@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inspect Poll</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='show_poll.css') }}">
+    <script>
+        function showSuccessMessage() {
+            alert("You have successfully voted!");
+        }
+    </script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <div class="nav-bar">
+        Poll Application
+    </div>
+
+    <!-- Poll details -->
+    <div class="poll-details">
+        <h3>{{ poll['poll'] }}</h3>
+
+        <!-- Poll options container -->
+        <div class="poll-options">
+            {% for i in range(1, options_count + 1) %}
+                <div class="poll-option">
+                    <span>{{ poll['option' + i|string] }}</span>
+                    <a href="{{ url_for('vote', id=poll_id, option=i) }}" class="vote-button">Vote</a>
+                    <div class="vote-card">
+                        {{ poll['votes' + i|string] }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Back button -->
+        <a class="back-link" href="{{ url_for('index') }}">Back</a>
+    </div>
+
+    {% if 'voted' in request.args %}
+    <script>
+        showSuccessMessage();
+    </script>
+    {% endif %}
+</body>
+</html>

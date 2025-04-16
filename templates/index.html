@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VOTING APP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div class="nav-bar">VOTING APP</div>
+
+    <div class="container">
+        <h3 class="polls-heading">POLLS</h3>
+        <img class="image" src="https://img.freepik.com/free-vector/international-day-democracy_23-2148608691.jpg?t=st=1744646423~exp=1744650023~hmac=88084d34644b69619e74dcd941dd88662b13d8e98dc624410b6a84d5ef06c663&w=826">
+
+        <!-- Polls List -->
+        <div class="polls-container">
+            <ul class="polls-list">
+                {% for key, value in polls.iterrows() %}
+                <li class="poll-item">
+                    <a href="{{ url_for('show_poll', id=key) }}" class="poll-title">{{ value['poll'] }}</a>
+                    <a href="{{ url_for('delete_poll', id=key) }}" class="delete-link" onclick="return confirm('Delete this poll?');">🗑️</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <a href="{{ url_for('create_poll') }}" class="create-button">+ Create New Poll</a>
+        </div>
+    </div>
+</body>
+</html>

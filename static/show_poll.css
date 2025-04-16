@@ -1,0 +1,108 @@
+/* General styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation bar */
+.nav-bar {
+    background-color: #0056b3;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Poll details container */
+.poll-details {
+    max-width: 500px;
+    margin: 40px auto;
+    background:  #f0f9ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Poll title */
+h3 {
+    color: #333333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Poll options */
+.poll-options {
+    margin-top: 20px;
+}
+
+.poll-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Option text */
+.poll-option span {
+    flex: 2;
+    text-align: left;
+    font-size: 1em;
+    color: #333333;
+    margin-right: 10px;
+}
+
+/* Vote button */
+.vote-button {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #0056b3;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.vote-button:hover {
+    background-color: #004494;
+}
+
+/* Vote card - right-aligned */
+.vote-card {
+    flex: 0.5;
+    text-align: center;
+    background-color: #e0e7ff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #333333;
+}
+    
+/* Back link */
+.back-link {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background: #0056b3;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.back-link:hover {
+    background: #004494;
+}
